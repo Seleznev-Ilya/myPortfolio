@@ -1,12 +1,45 @@
-html{
+/*---------------------------- карточка ----------------------------*/
+.card:hover .front{ transform: rotateY(180deg)}
+.card:hover .back{ transform: rotateY(360deg)}
+.front, .back{
+    border-radius: 150px;
+    position: absolute;
+    left:0;
+    right:0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .77s;
+    backface-visibility: hidden;
+    color: orange;
+    font-size: 32px;
+    text-transform: uppercase;
+}
+.card{
+    transform: translateY(-140px);
+    margin-left: 3%;
+    height: 300px;
+    width: 300px;
+    perspective: 1000px;
+}
+.front{
+    background-color: #0E0C4F;
+}
+.back{
+    background: url("../mg/p.jpg") no-repeat center;
+    filter: brightness(77%);
+    background-size: cover;
+    transform: rotateY(180deg);
+}
+/*---------------------------- //карточка ----------------------------*/
+body{
+    background-image: url("../mg/background/bg.png");
     font-family: 'PT Sans Caption', sans-serif;
     font-size: 16px;
     line-height: 1.5;
-    /*min-width: 320px;*/
-
-}
-body{
-    background-image: url("../mg/background/bg.png");
+    min-width: 320px;
 }
 img {
     display: inline-block;
@@ -24,25 +57,26 @@ a{
            GRID
  ---------------------------*/
 .container{
-    width: 1170px;
+    max-width: 1200px;
     padding: 0 15px 0 15px;
     margin: 0 auto;
 }
 .row{
     box-sizing: border-box;
-    height: 350px;
-    margin-bottom: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
-.row:after{
-    content:"";
-    clear: both;
-    display: table;
-}
+/*.row:after{*/
+    /*content:"";*/
+    /*clear: both;*/
+    /*display: table;*/
+/*}*/
 
 .col-4{
     width: 360px;
     margin-right:30px;
-    float: left;
+    /*float: left;*/
 
 
 }
@@ -104,14 +138,15 @@ p.lenguage{
 .title img{
     display: inline-block;
     margin: 0 auto;
-    height: 300px;
-    width: auto;
+    max-height: 300px;
+    width: 360px;
 }
 .portfolio-item__img img{
-    height: 225px;
+    height: 235px;
     filter: brightness(77%);
     /*height: auto;*/
     width:100%;
+    max-width: 433px;
 }
 .portfolio-item:hover img{
     filter: brightness(99%);
@@ -119,63 +154,27 @@ p.lenguage{
 }
 .portfolio-item__img{
     margin-bottom: 17px;
+
 }
 .portfolio-item__title{
     font-size: 24px;
-    line-height: normal;
     margin-bottom: 5px;
 }
 .portfolio-item__text{
     font-size:16px;
-    display: none;
+    /*display: none;*/
+    opacity: 0;
 }
 .portfolio-item:hover .portfolio-item__text {
-    display: inline;
+    /*display: inline;*/
+    opacity: 1;
 }
 
 .portfolio{
     position: relative;
     padding-top: 0;
-    padding-bottom: 100px;
+    /*padding-bottom: 100px;*/
 }
-/*---------------------------- карточка ----------------------------*/
-.card{
-    transform: translateY(-140px);
-    margin-left: 3%;
-    height: 300px;
-    width: 300px;
-    perspective: 1000px;
-
-}
-.front, .back{
-    position: absolute;
-    left:0;
-    right:0;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 150px;
-    transition: .85s;
-    backface-visibility: hidden;
-    /*color: #FFFFFF;*/
-    color: orange;
-    font-size: 33px;
-    text-transform: uppercase;
-}
-.front{
-    background-color: #0E0C4F;
-}
-.back{
-    background: url("../mg/p.jpg") no-repeat center;
-    filter: brightness(77%);
-    background-size: cover;
-    transform: rotateY(180deg);
-}
-.card:hover .front{ transform: rotateY(180deg)}
-.card:hover .back{ transform: rotateY(360deg)}
-/*---------------------------- //карточка ----------------------------*/
 
 .portfolio-item{
     margin-bottom: 20px;
@@ -230,7 +229,6 @@ p.lenguage{
     color: #044D78;
     padding-bottom:80px;
     padding-top:90px;
-    z-index: 1;
 }
 .footer p{
     margin-top: 0;
@@ -240,7 +238,6 @@ p.footer__name{
     color: #FFFFFF;
     font-size: 28px;
     margin-bottom: 10px;
-    line-height: px;
     font-family: 'Merriweather', serif;
 }
 p.footer__social{
@@ -266,14 +263,11 @@ p.footer_social_icons a:hover{
     display: inline-block;
     text-decoration: none;
     text-transform: uppercase;
-    letter-spacing: 1.6px;
+    letter-spacing: 2px;
     border: 2px solid white;
     border-radius: 50px;
     font-weight: 700;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    padding-right: 23px;
-    padding-left: 23px;
+    padding: 8px 23px;
     color: #FFF;
     -webkit-transition: 0.2s ease-out;
     -moz-transition: 0.2s ease-out;
@@ -289,32 +283,28 @@ p.footer_social_icons a:hover{
 /*----------------------------
            MEDIA
  ---------------------------*/
-@media (max-width: 1160px) {
+@media (max-width: 990px) {
 
-    .container{
-        width: 100%;
-    }
+    /*.container{*/
+        /*width: 100%;*/
+    /*}*/
     .card{
         margin: 0 auto;
         transform: translateY(-30px);
 
     }
     .col-4{
-        width: 100%;
-        margin: 0;
-        margin-bottom: 30px;
+        margin: 0 0 30px;
         padding-left: 15px;
         padding-right: 15px;
         text-align: center;
     }
     .header__title{
         font-size: 38px;
-        line-height: 48px;
         margin-bottom: 15px;
     }
     .header__slogan{
         font-size: 22px;
-        line-height: 38px;
     }
     .portfolio{
         padding-top: 40px;
@@ -331,5 +321,14 @@ p.footer_social_icons a:hover{
     .header__slogan{
         padding-right: 15px;
         padding-left: 15px;
+    }
+
+    .portfolio-item__text {
+        font-size: 12px;
+    }
+}
+@media (max-width: 570px) {
+    .portfolio-item__text {
+        display: none;
     }
 }
