@@ -57,7 +57,7 @@ a{
            GRID
  ---------------------------*/
 .container{
-    transform: translateY(-160px);
+    transform: translateY(-60px);
     max-width: 1200px;
     padding: 0 6px 0 5px;
     margin: 0 auto;
@@ -147,6 +147,7 @@ p.lenguage{
 
 
 .title{
+    transform: translateY(-60px);
     font-size: 48px;
     margin-bottom: 60px;
     text-align: center;
