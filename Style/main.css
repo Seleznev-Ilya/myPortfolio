@@ -1,4 +1,7 @@
 /*---------------------------- карточка ----------------------------*/
+.hideOld{
+    display: none;
+}
 .card:hover .front{ transform: rotateY(180deg)}
 .card:hover .back{ transform: rotateY(360deg)}
 .front, .back{
